@@ -128,5 +128,5 @@ int main()
 
 	winResult haswin = display.iswin();
 
-	std::cout << haswin.won << haswin.ID;
+	std::cout << "player "<< haswin.ID << " has won!";
 }

@@ -83,7 +83,7 @@ public:
 				{
 					return {true, grid[i][ii]};
 				}
-				// diagonal 3
+				// diagonal 3 // not needed
 				/*else if (
 					grid[i][ii] == grid[(i + 1) % y][(ii -1 ) % x] &&
 					grid[(i + 1) % y][(ii - 1) % x] == grid[(i + 2) % y][(ii - 2) % x] &&
@@ -92,7 +92,7 @@ public:
 				{
 					return {true, grid[i][ii]};
 				}
-				// diagonal 4
+				// diagonal 4 // not needed
 				else if (
 					grid[i][ii] == grid[(i + 1) % y][(ii + 1) % x] && 
 					grid[(i + 1) % y][(ii + 1) % x] == grid[(i + 2) % y][(ii + 2) % x] &&
@@ -111,7 +111,8 @@ public:
 
 int main()
 {
-	char playerChars[] = {'X', 'O'};
+	while (true){
+char playerChars[] = {'X', 'O'};
 	bool playerSwitcher = true;
 	int lineNum;
 	Grid display;
@@ -122,11 +123,12 @@ int main()
 		std::cout << "current player: " << playerChars[playerSwitcher] << '\n';
 		std::cin >> lineNum;
 		display.setGridPoint((lineNum -1), playerChars[playerSwitcher]);
-		display.outputGrid();
 		playerSwitcher = !playerSwitcher;
 	}
 
 	winResult haswin = display.iswin();
 
 	std::cout << "player "<< haswin.ID << " has won!";
+	}
+	
 }
